@@ -38,12 +38,18 @@ class Mytest(SimpleTestCase):
     I examine that if made more than one class
     """
     def test_template_home(self):
+        """
+        Check for the right path to the desired page
+        """
         url = reverse('home')
         response = self.client.get(url)
         actual= 'home.html'
         self.assertTemplateUsed(response,actual)
     
     def test_template_about(self):
+        """
+        Check for the right path to the desired page
+        """
         url = reverse('about')
         response = self.client.get(url)
         actual= 'about.html'
